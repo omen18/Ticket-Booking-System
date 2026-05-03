@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #e6f4fb;
+  --bg-secondary: #f4fbff;
+  --text-primary: #0d2a3d;
+  --text-secondary: #4c6f86;
+  --text-muted: #7996a9;
+  --accent: #127ba3;
+  --accent-light: #35a8d6;
+  --accent-strong: #0d6080;
+  --accent-dark: #083047;
+  --border: #cce3ef;
+  --success: #16a34a;
+  --warning: #d97706;
+  --danger: #dc2626;
+  --neu-base: #f4fbff;
+  --neu-dark: #c8dfea;
+  --neu-light: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(31, 126, 168, 0.18);
+  color: #0f2f45;
+}
+
+body {
+  color: var(--text-primary);
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.95) 0%, transparent 28%),
+    radial-gradient(circle at bottom right, rgba(53, 168, 214, 0.12) 0%, transparent 24%),
+    linear-gradient(180deg, #f7fcff 0%, var(--bg-primary) 42%, #dceff8 100%);
+  font-family: var(--font-inter), Inter, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-display {
+  font-family: var(--font-syne), Syne, sans-serif;
+}
+
+.neu-raised {
+  background: var(--neu-base);
+  box-shadow: 6px 6px 12px var(--neu-dark), -6px -6px 12px var(--neu-light);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.neu-pressed {
+  background: #e7f2f8;
+  box-shadow: inset 4px 4px 8px var(--neu-dark), inset -4px -4px 8px var(--neu-light);
+}
+
+.glass-dark {
+  background: rgba(8, 48, 71, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* Seat map scrollbar */
+.seat-scroll::-webkit-scrollbar { height: 4px; }
+.seat-scroll::-webkit-scrollbar-track { background: transparent; }
+.seat-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
+
+/* Custom cursor — hide native pointer when JS cursor is active */
+body.no-cursor,
+body.no-cursor * {
+  cursor: none !important;
+}
+
+/* Reveal animation base — GSAP targets */
+.reveal-item { will-change: transform, opacity; }
+
+/* Shimmer skeleton */
+.shimmer {
+  background: linear-gradient(90deg,
+    rgba(200,223,234,0.45) 25%,
+    rgba(255,255,255,0.75) 50%,
+    rgba(200,223,234,0.45) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+}
+
+/* Focus ring glow on inputs and textareas */
+input:focus, textarea:focus, select:focus {
+  box-shadow: 0 0 0 3px rgba(18,123,163,0.18), inset 4px 4px 8px var(--neu-dark), inset -4px -4px 8px var(--neu-light);
+  outline: none;
+}
+
+/* Interactive link underline */
+.animated-link {
+  position: relative;
+}
+.animated-link::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 0; height: 1.5px;
+  background: var(--accent);
+  transition: width 0.25s ease;
+}
+.animated-link:hover::after { width: 100%; }
+
+/* Click ripple */
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+.ripple::after {
+  content: "";
+  position: absolute;
+  width: 100px; height: 100px;
+  top: var(--ripple-y, 50%); left: var(--ripple-x, 50%);
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  background: rgba(255,255,255,0.28);
+  animation: ripple-burst 0.55s ease-out;
+  pointer-events: none;
+}
+
+@keyframes ripple-burst {
+  to { transform: translate(-50%, -50%) scale(6); opacity: 0; }
+}
+
+/* Card glow on hover */
+.card-hover {
+  transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+.card-hover:hover {
+  box-shadow: 0 24px 48px rgba(18,123,163,0.13);
+  border-color: rgba(18,123,163,0.28);
+  transform: translateY(-3px);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
