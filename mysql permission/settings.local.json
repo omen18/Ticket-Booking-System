@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(mysql -u root -proot --connect-timeout=5 -e \"SELECT VERSION\\(\\);\")",
+      "Bash(mysql -u root -p'' --connect-timeout=5 -e \"SELECT VERSION\\(\\);\")",
+      "Bash(mysql -u root -prajyash18 ticket_booking_system -e \"SELECT user_id, email FROM Users ORDER BY user_id;\")",
+      "Bash(mysql -u root -prajyash18 ticket_booking_system -e \"SELECT venue_id, COUNT\\(*\\) as seat_count FROM Seat GROUP BY venue_id ORDER BY venue_id;\")",
+      "Bash(mysql -u root -prajyash18 ticket_booking_system -e \"SELECT venue_id, COUNT\\(*\\) as total_seats FROM Seat GROUP BY venue_id;\")"
+    ]
+  }
+}
