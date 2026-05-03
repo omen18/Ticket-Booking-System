@@ -14,6 +14,9 @@ Browse events → Select seats → Pay → Get a QR ticket. Concurrency-safe, tr
 
 [Getting Started](#getting-started) · [Architecture](#architecture) · [API Reference](#api-reference) · [Load Testing](#load-testing) · [Roadmap](#roadmap)
 
+<img width="1280" height="765" alt="Screenshot 2026-05-03 at 12 51 45 PM" src="https://github.com/user-attachments/assets/b7424dc3-12a3-4ec4-b8fc-199c6ca1d390" />
+
+
 </div>
 
 ---
@@ -246,6 +249,8 @@ The new `/api/book-ticket` route does all of this atomically:
 ```
 
 Returns `409 Conflict` with the conflicting seat list so clients can recover gracefully.
+
+<img width="1280" height="765" alt="Screenshot 2026-05-03 at 12 51 59 PM" src="https://github.com/user-attachments/assets/78982f68-4b7f-472c-ab7d-77509ab5a81e" />
 
 ---
 
