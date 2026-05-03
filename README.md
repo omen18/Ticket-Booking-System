@@ -4,7 +4,7 @@
 <img src="https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white" />
 <img src="https://img.shields.io/badge/MySQL-8-4479A1?style=flat-square&logo=mysql&logoColor=white" />
 <img src="https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" />
-<img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" />
+
 
 # 🎟️ TicketFlow
 
@@ -484,4 +484,4 @@ Please run the load test before submitting changes to the booking or seat lock f
 
 ## License
 
-MIT © 2025 TicketFlow Contributors
+Yash © 2025 TicketFlow Contributors
